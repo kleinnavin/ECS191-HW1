@@ -1,0 +1,6 @@
+// Base build settings for the SmartStock target.
+//
+// The Finnhub API key lives in Secrets.xcconfig, which is git-ignored.
+// Copy Secrets.example.xcconfig to Secrets.xcconfig and paste your key there.
+// The `?` makes the include optional so the project still builds without it.
+#include? "Secrets.xcconfig"

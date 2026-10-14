@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+DerivedData/
+
+# Secrets — never commit API keys
+SmartStock/Config/Secrets.xcconfig
