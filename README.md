@@ -3,9 +3,9 @@
 # Build Instructions:
 
 1. Go to [Finnhub](https://finnhub.io/) and get a free API key
-2. In @SmartStock/Config/, create a copy of "Secrets.example.xcconfig" and name it "Secrets.xcconfig"
+2. In `SmartStock/Config/`, create a copy of "Secrets.example.xcconfig" and name it "Secrets.xcconfig"
 3. In line 4, replace "your_finnhub_api_key_here" with the API key from Finnhub
-4. Open @SmartStock/SmartStock.xcodeproj in Xcode and build+run
+4. Open `SmartStock/SmartStock.xcodeproj` in Xcode and build+run
 
 # Main Feature Usage
 
