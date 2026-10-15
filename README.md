@@ -10,14 +10,14 @@
 # Main Feature Usage
 
 ## Watchlist 
-1. Click the magnifying to search for a financial asset
+1. Click the magnifying glass to search for a financial asset
 2. Click the plus button to add to watchlist
 3. Click on the asset in the list to view details
-4. Click and drag across the graph to see the price at different at different times; Click the buttons above the graph to change time intervals.
+4. Click and drag across the graph to see the price at different times; Click the buttons above the graph to change time intervals.
 5. Optionally, enable simple indicators at the bottom of the screen
 
 ## My Positions
-1. From the watchlist view, click the My Positions button at the bottom of the screen (or Edit > My Positions)
+1. From the Watchlist view, click the My Positions button at the bottom of the screen (or go to Edit > My Positions)
 2. Click the plus button in the top right to search for an asset that you own
-3. Click the symbol and enter purchase details (date, price, # of shares/dollar amount)
+3. Click the symbol name and enter purchase details (date, price, # of shares/dollar amount)
 4. Click positions that have been added to the My Positions view to see the price history of your position
