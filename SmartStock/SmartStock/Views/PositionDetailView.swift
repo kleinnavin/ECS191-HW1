@@ -63,7 +63,7 @@ struct PositionDetailView: View {
         }
         .scrollBounceBehavior(.basedOnSize)
         .background(Color(white: 0.11))
-        .safeAreaInset(edge: .top, spacing: 0) { closeBar }
+        .sheetCloseBar()
         .presentationDetents([.large])
         .presentationDragIndicator(.visible)
         .task { await loadValues() }
@@ -76,21 +76,6 @@ struct PositionDetailView: View {
     }
 
     // MARK: - Sections
-
-    private var closeBar: some View {
-        HStack {
-            Button("Close", systemImage: "xmark") { dismiss() }
-                .labelStyle(.iconOnly)
-                .font(.title3.weight(.medium))
-                .foregroundStyle(.primary)
-                .frame(width: 44, height: 44)
-                .glassEffect(.regular.interactive(), in: .circle)
-            Spacer()
-        }
-        .padding(.horizontal, 20)
-        .padding(.top, 16)
-        .padding(.bottom, 4)
-    }
 
     private var header: some View {
         HStack(alignment: .firstTextBaseline, spacing: 10) {

@@ -11,6 +11,7 @@ struct PositionsView: View {
     @Environment(PortfolioStore.self) private var portfolio
     @State private var editMode: EditMode = .inactive
     @State private var isAddingPosition = false
+    @State private var isShowingInsights = false
     @State private var selectedPosition: Position?
 
     var body: some View {
@@ -51,6 +52,14 @@ struct PositionsView: View {
                 )
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
+
+                Text("Tap \(Image(systemName: "sparkles")) for Portfolio Insights: Claude reviews your positions and suggests ways to improve your portfolio.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
             }
         }
         .listStyle(.plain)
@@ -73,6 +82,10 @@ struct PositionsView: View {
         .navigationSubtitle(Date.now.formatted(.dateTime.month(.wide).day()))
         .toolbar {
             ToolbarItemGroup(placement: .topBarTrailing) {
+                Button("Portfolio Insights", systemImage: "sparkles") {
+                    isShowingInsights = true
+                }
+                .disabled(portfolio.positions.isEmpty || editMode.isEditing)
                 Button("Add Position", systemImage: "plus") {
                     isAddingPosition = true
                 }
@@ -100,6 +113,9 @@ struct PositionsView: View {
         .sheet(item: $selectedPosition) { position in
             PositionDetailView(position: position)
         }
+        .sheet(isPresented: $isShowingInsights) {
+            PortfolioInsightsView()
+        }
     }
 }
 
@@ -109,5 +125,6 @@ struct PositionsView: View {
     }
     .environment(WatchlistStore())
     .environment(PortfolioStore())
+    .environment(InsightsStore())
     .preferredColorScheme(.dark)
 }

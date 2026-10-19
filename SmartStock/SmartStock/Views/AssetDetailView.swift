@@ -10,7 +10,6 @@ struct AssetDetailView: View {
     let asset: Asset
 
     @Environment(WatchlistStore.self) private var watchlist
-    @Environment(\.dismiss) private var dismiss
 
     @State private var range: YahooFinanceClient.Range = .oneDay
     @State private var charts: [YahooFinanceClient.Range: YahooFinanceClient.Chart] = [:]
@@ -77,7 +76,7 @@ struct AssetDetailView: View {
         }
         .scrollBounceBehavior(.basedOnSize)
         .background(Color(white: 0.11))
-        .safeAreaInset(edge: .top, spacing: 0) { closeBar }
+        .sheetCloseBar()
         .presentationDetents([.large])
         .presentationDragIndicator(.visible)
         .transaction(value: showSMA) { $0.animation = nil }
@@ -91,21 +90,6 @@ struct AssetDetailView: View {
     }
 
     // MARK: - Sections
-
-    private var closeBar: some View {
-        HStack {
-            Button("Close", systemImage: "xmark") { dismiss() }
-                .labelStyle(.iconOnly)
-                .font(.title3.weight(.medium))
-                .foregroundStyle(.primary)
-                .frame(width: 44, height: 44)
-                .glassEffect(.regular.interactive(), in: .circle)
-            Spacer()
-        }
-        .padding(.horizontal, 20)
-        .padding(.top, 16)
-        .padding(.bottom, 4)
-    }
 
     private var header: some View {
         HStack(alignment: .firstTextBaseline, spacing: 10) {

@@ -11,12 +11,14 @@ import SwiftUI
 struct SmartStockApp: App {
     @State private var watchlist = WatchlistStore()
     @State private var portfolio = PortfolioStore()
+    @State private var insights = InsightsStore()
 
     var body: some Scene {
         WindowGroup {
             HomeView()
                 .environment(watchlist)
                 .environment(portfolio)
+                .environment(insights)
                 .preferredColorScheme(.dark)
         }
     }
