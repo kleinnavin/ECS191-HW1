@@ -26,15 +26,20 @@ struct PortfolioInsightsView: View {
             .padding(.horizontal, 20)
             .padding(.bottom, 24)
         }
-        .background(Color.black)
+        .background(Color.appBackground)
         .sheetCloseBar()
         .presentationDragIndicator(.visible)
     }
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Label("Portfolio Insights", systemImage: "sparkles")
-                .font(.title2.weight(.bold))
+            Label {
+                Text("Portfolio Insights")
+            } icon: {
+                Image(systemName: "sparkles")
+                    .foregroundStyle(.tint)
+            }
+            .font(.title2.weight(.bold))
             if let date = insights.saved?.date {
                 Text("Generated \(date.formatted(date: .abbreviated, time: .shortened))")
                     .font(.subheadline)
@@ -180,6 +185,9 @@ private struct RecommendationCard: View {
                 Spacer()
                 Text(recommendation.priority.rawValue.capitalized)
                     .font(.caption.weight(.semibold))
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 3)
+                    .background(priorityColor.opacity(0.2), in: .capsule)
                     .foregroundStyle(priorityColor)
             }
             Text(recommendation.detail)
@@ -188,6 +196,6 @@ private struct RecommendationCard: View {
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(white: 0.11), in: .rect(cornerRadius: 14))
+        .background(Color.appSurface, in: .rect(cornerRadius: 14))
     }
 }

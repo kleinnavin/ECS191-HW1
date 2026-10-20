@@ -24,6 +24,10 @@ final class InsightsStore {
     private(set) var isLoading = false
     private(set) var errorMessage: String?
 
+    /// Identifies the request in flight, so one that finishes after `clear()`
+    /// doesn't bring back insights for positions that were deleted.
+    private var requestID: UUID?
+
     private let advisor: PortfolioAdvisor
     private let defaults: UserDefaults
     private static let storageKey = "insights.latest"
@@ -48,15 +52,29 @@ final class InsightsStore {
         isLoading = true
         errorMessage = nil
         let positions = Self.fingerprint(of: portfolio)
+        let id = UUID()
+        requestID = id
         Task {
-            defer { isLoading = false }
             do {
                 let analysis = try await advisor.analyze(portfolio)
+                guard requestID == id else { return }
                 saved = Saved(analysis: analysis, date: .now, positions: positions)
             } catch {
+                guard requestID == id else { return }
                 errorMessage = error.localizedDescription
             }
+            isLoading = false
+            requestID = nil
         }
+    }
+
+    /// Deletes the saved analysis and abandons any request in flight, e.g.
+    /// once every position has been removed.
+    func clear() {
+        saved = nil
+        errorMessage = nil
+        isLoading = false
+        requestID = nil
     }
 
     private static func fingerprint(of portfolio: PortfolioStore) -> String {

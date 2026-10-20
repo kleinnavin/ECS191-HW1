@@ -75,7 +75,7 @@ struct AssetDetailView: View {
             .padding(.bottom, 32)
         }
         .scrollBounceBehavior(.basedOnSize)
-        .background(Color(white: 0.11))
+        .background(Color.appSurface)
         .sheetCloseBar()
         .presentationDetents([.large])
         .presentationDragIndicator(.visible)
@@ -523,7 +523,7 @@ struct StatColumns: View {
 }
 
 #Preview {
-    Color.black
+    Color.appBackground
         .sheet(isPresented: .constant(true)) {
             AssetDetailView(asset: Asset.defaults[0])
                 .environment(WatchlistStore())

@@ -27,7 +27,7 @@ struct AssetRow: View {
 
             if let history, history.points.count > 1 {
                 Sparkline(history: history)
-                    .frame(width: 72, height: 34)
+                    .frame(width: 60, height: 34)
             }
 
             VStack(alignment: .trailing, spacing: 6) {
@@ -62,7 +62,7 @@ struct AssetRow: View {
     }
 }
 
-/// The green/red pill showing the day's percent change.
+/// The day's percent change in green or red on a tinted capsule.
 struct ChangeBadge: View {
     let percent: Double
 
@@ -70,17 +70,17 @@ struct ChangeBadge: View {
         Text(percent / 100, format: .percent.precision(.fractionLength(2)).sign(strategy: .always()))
             .font(.subheadline.weight(.semibold))
             .monospacedDigit()
-            .foregroundStyle(.white)
+            .foregroundStyle(color)
             .frame(minWidth: 72, alignment: .trailing)
-            .padding(.horizontal, 8)
+            .padding(.horizontal, 10)
             .padding(.vertical, 4)
-            .background(color, in: RoundedRectangle(cornerRadius: 6))
+            .background(color.opacity(0.18), in: Capsule())
     }
 
     private var color: Color {
         if percent > 0 { return .stockGreen }
         if percent < 0 { return .stockRed }
-        return Color(white: 0.4)
+        return Color(white: 0.6)
     }
 }
 

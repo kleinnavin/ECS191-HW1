@@ -45,7 +45,7 @@ struct PortfolioCard: View {
             // Opaque so rows scrolling underneath don't show through the text.
             .background {
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(Color(white: 0.13))
+                    .fill(Color.appSurface)
                     .strokeBorder(Color.white.opacity(0.08))
                     .shadow(color: .black.opacity(0.6), radius: 12, y: 4)
             }
@@ -81,6 +81,6 @@ struct PortfolioCard: View {
     }
     .padding()
     .frame(maxHeight: .infinity)
-    .background(Color.black)
+    .background(Color.appBackground)
     .preferredColorScheme(.dark)
 }

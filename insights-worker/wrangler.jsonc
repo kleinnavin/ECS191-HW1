@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "smartstock-insights",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  // Limits each IP address to 3 analyses a minute, so the endpoint can't be
+  // used to run up the Anthropic bill. Cloudflare only supports 10- or
+  // 60-second periods here; the Anthropic spending limit is the backstop.
+  "ratelimits": [
+    {
+      "name": "RATE_LIMITER",
+      "namespace_id": "1001",
+      "simple": { "limit": 3, "period": 60 }
+    }
+  ]
+  // ANTHROPIC_API_KEY is a secret, set with `npx wrangler secret put ANTHROPIC_API_KEY`.
+}

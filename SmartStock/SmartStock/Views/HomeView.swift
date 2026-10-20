@@ -37,15 +37,14 @@ struct HomeView: View {
                         .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
-                    .listRowBackground(Color.clear)
-                    .listRowSeparatorTint(Color(white: 0.25))
+                    .cardRow()
                 }
                 .onDelete(perform: watchlist.remove(atOffsets:))
                 .onMove(perform: watchlist.move(fromOffsets:toOffset:))
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
-            .background(Color.black)
+            .background(Color.appBackground)
             .safeAreaInset(edge: .bottom) {
                 // Pinned so it's visible however long the watchlist is; the
                 // list scrolls behind it and its last row stays reachable.
@@ -63,7 +62,7 @@ struct HomeView: View {
                     // Fade the list out behind the card and down to the screen edge.
                     .background {
                         LinearGradient(
-                            stops: [.init(color: .black.opacity(0), location: 0), .init(color: .black, location: 0.35)],
+                            stops: [.init(color: .appBackground.opacity(0), location: 0), .init(color: .appBackground, location: 0.35)],
                             startPoint: .top,
                             endPoint: .bottom
                         )
@@ -77,7 +76,7 @@ struct HomeView: View {
                 }
             }
             .environment(\.editMode, $editMode)
-            .navigationTitle("Stocks")
+            .navigationTitle("SmartStock")
             .navigationSubtitle(Date.now.formatted(.dateTime.month(.wide).day()))
             .toolbar {
                 ToolbarItemGroup(placement: .topBarTrailing) {

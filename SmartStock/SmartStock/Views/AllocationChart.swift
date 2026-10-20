@@ -161,7 +161,7 @@ struct AllocationChart: View {
         .listRowBackground(Color.clear)
     }
     .listStyle(.plain)
-    .background(Color.black)
+    .background(Color.appBackground)
     .scrollContentBackground(.hidden)
     .preferredColorScheme(.dark)
 }

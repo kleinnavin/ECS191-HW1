@@ -275,7 +275,7 @@ struct ChartSelectionMarker: View {
     )
     .frame(height: 280)
     .padding(20)
-    .background(Color(white: 0.11))
+    .background(Color.appSurface)
     .preferredColorScheme(.dark)
 }
 
@@ -295,7 +295,7 @@ struct ChartSelectionMarker: View {
     )
     .frame(height: 280)
     .padding(20)
-    .background(Color(white: 0.11))
+    .background(Color.appSurface)
     .preferredColorScheme(.dark)
 }
 
@@ -314,6 +314,6 @@ struct ChartSelectionMarker: View {
     )
     .frame(height: 280)
     .padding(20)
-    .background(Color(white: 0.11))
+    .background(Color.appSurface)
     .preferredColorScheme(.dark)
 }

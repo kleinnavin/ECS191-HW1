@@ -1,0 +1,9 @@
+{
+  "id" : "9a700786-1b5e-41c0-b75c-55567d84ae2d",
+  "targets" : [
+    {
+      "id" : "bcced080-7e42-4bea-b32d-c49463ca94c9",
+      "name" : "SmartStock"
+    }
+  ]
+}

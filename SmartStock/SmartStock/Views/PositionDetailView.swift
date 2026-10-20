@@ -62,7 +62,7 @@ struct PositionDetailView: View {
             .padding(.bottom, 32)
         }
         .scrollBounceBehavior(.basedOnSize)
-        .background(Color(white: 0.11))
+        .background(Color.appSurface)
         .sheetCloseBar()
         .presentationDetents([.large])
         .presentationDragIndicator(.visible)
@@ -202,7 +202,7 @@ struct PositionDetailView: View {
 }
 
 #Preview {
-    Color.black
+    Color.appBackground
         .sheet(isPresented: .constant(true)) {
             PositionDetailView(position: Position(
                 asset: Asset(symbol: "AAPL", title: "AAPL", name: "Apple Inc"),

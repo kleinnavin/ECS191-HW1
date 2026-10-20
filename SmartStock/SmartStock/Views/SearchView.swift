@@ -23,6 +23,7 @@ struct SearchView: View {
                 }
             }
             .listStyle(.plain)
+            .appBackground()
             .overlay { overlay }
             .navigationTitle("Add Symbol")
             .navigationBarTitleDisplayMode(.inline)

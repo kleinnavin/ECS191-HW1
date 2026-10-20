@@ -19,6 +19,7 @@ struct SmartStockApp: App {
                 .environment(watchlist)
                 .environment(portfolio)
                 .environment(insights)
+                .fontDesign(.rounded)
                 .preferredColorScheme(.dark)
         }
     }

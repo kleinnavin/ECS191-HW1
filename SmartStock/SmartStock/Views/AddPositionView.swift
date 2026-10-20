@@ -31,6 +31,7 @@ struct AddPositionView: View {
                 }
             }
             .listStyle(.plain)
+            .appBackground()
             .overlay { overlay }
             .navigationTitle("Add Position")
             .navigationBarTitleDisplayMode(.inline)
@@ -201,6 +202,7 @@ private struct PositionForm: View {
                 }
             }
         }
+        .appBackground()
         .navigationTitle("Position Details")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

@@ -9,6 +9,7 @@ import SwiftUI
 /// Pushed from the watchlist, so the back button returns to it.
 struct PositionsView: View {
     @Environment(PortfolioStore.self) private var portfolio
+    @Environment(InsightsStore.self) private var insights
     @State private var editMode: EditMode = .inactive
     @State private var isAddingPosition = false
     @State private var isShowingInsights = false
@@ -23,7 +24,7 @@ struct PositionsView: View {
                     dayChange: portfolio.totalDayChange
                 )
                 .listRowBackground(Color.clear)
-                .listRowSeparatorTint(Color(white: 0.25))
+                .listRowSeparator(.hidden)
             }
 
             ForEach(portfolio.positions) { position in
@@ -38,8 +39,7 @@ struct PositionsView: View {
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
-                .listRowBackground(Color.clear)
-                .listRowSeparatorTint(Color(white: 0.25))
+                .cardRow()
             }
             .onDelete(perform: portfolio.remove(atOffsets:))
             .onMove(perform: portfolio.move(fromOffsets:toOffset:))
@@ -64,7 +64,7 @@ struct PositionsView: View {
         }
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
-        .background(Color.black)
+        .background(Color.appBackground)
         .overlay {
             if portfolio.positions.isEmpty {
                 ContentUnavailableView {
@@ -104,8 +104,11 @@ struct PositionsView: View {
                 try? await Task.sleep(for: .seconds(60))
             }
         }
-        .onChange(of: portfolio.positions.isEmpty) { _, isEmpty in
-            if isEmpty { editMode = .inactive }
+        .onChange(of: portfolio.positions.isEmpty, initial: true) { _, isEmpty in
+            if isEmpty {
+                editMode = .inactive
+                insights.clear()
+            }
         }
         .sheet(isPresented: $isAddingPosition) {
             AddPositionView()
