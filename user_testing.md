@@ -49,20 +49,20 @@ The user ranked the difficulty of using the app a 2/5. They liked the minimalist
 __*Important Note__: During the task phase, the user was not able to figure out how to get to the My Positions view which is a required step to test the portfolio insights (AI feature) function. In order to test this feature, I told them to navigate to the My Positions view.
 
 __5 Second Test__: 
-This user thought the app was used to look at stocks that you own.
+This user thought the app was used to look at stocks that they own.
 
 __Where they got stuck/confused__: 
-They didn’t realize that they could use the My Positions tab to input the stocks that they own. They were also confused by the distinction between all time gain and daily gain. 
+They didn’t realize that they could use the My Positions tab to input the stocks that they own. They were also confused by the distinction between all-time gain and daily gain. 
 
 __Answers to Debrief__:
 They gave the app a 3/5 for difficulty of use. They mentioned that navigating the app was difficult for someone who didn’t have background knowledge about finance. They suggested connecting the Watchlist and My Positions view in a more intuitive way. They described the app as a tool for people who want to keep up with both stocks that they own and don’t own. 
 
 ### Patterns and Points of Confusion
-One thing multiple people struggled with was the process of entering information about a position. Several people found it confusing to navigate through the process of entering information because the number pad remains on the screen as the user goes through fields. I could tell that they were either expecting some sort of visual change or a way of clicking something to make the keyboard disappear. Another pattern that I noticed is that several testers felt the buttons needed improvement. Multiple users talked about the purpose of buttons being unclear. Also multiple people talked about certain buttons being too small and not emphasized enough.
+One thing multiple people struggled with was the process of entering information about a position. Several people found it confusing because the number pad would remain on the screen as the user goes through fields without having a way of closing it. It is clear that they were either expecting some sort of visual change or a way of clicking something to make the keyboard disappear. Another pattern that I noticed is that several testers felt the buttons needed improvement. Multiple users talked about the purpose of buttons being unclear. Also multiple people talked about how certain buttons were too small and not emphasized enough.
 
 ### Future Changes
-I would definitely redesign the buttons to make them clearer. I would also emphasize the more important buttons to help the user flow. 
+I would definitely redesign the buttons to make them clearer. I would also emphasize the more important buttons to help the user flow of the app. 
 
 Although most users eventually figured it out, I think the input process could be more intuitive. Instead of having the user enter all of the information on the same screen, I would have them enter it sequentially in different steps. This method would give the user more feedback and not overwhelm them.
 
-Another thing I would change is adding some feature that helps retain user interest. Users found the app to be very straightforward, which was one of my goals. However, I think a fun feature would be beneficial, especially to users who aren’t as interested in the stock market. I would add a “Stock of the Day” feature that shows some stock or other financial asset that is interesting or relevant to current events.
+Another thing I would change is adding a feature that helps retain user interest. Users found the app to be very straightforward, which was one of my goals. However, I think a fun feature would be beneficial, especially to users who aren’t as interested in the stock market. I would add a “Stock of the Day” feature that shows some stock or other financial asset that is interesting or relevant to current events.
