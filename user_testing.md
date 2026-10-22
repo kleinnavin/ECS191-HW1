@@ -61,7 +61,7 @@ They gave the app a 3/5 for difficulty of use. They mentioned that navigating th
 One thing multiple people struggled with was the process of entering information about a position. Several people found it confusing because the number pad would remain on the screen as the user goes through fields without having a way of closing it. It is clear that they were either expecting some sort of visual change or a way of clicking something to make the keyboard disappear. Another pattern that I noticed is that several testers felt the buttons needed improvement. Multiple users talked about the purpose of buttons being unclear. Also multiple people talked about how certain buttons were too small and not emphasized enough.
 
 ### Future Changes
-I would definitely redesign the buttons to make them clearer. I would also emphasize the more important buttons to help the user flow of the app. 
+I would definitely redesign the buttons to make them clearer (changing the color/size). I would also emphasize the more important buttons to help the user flow of the app. 
 
 Although most users eventually figured it out, I think the input process could be more intuitive. Instead of having the user enter all of the information on the same screen, I would have them enter it sequentially in different steps. This method would give the user more feedback and not overwhelm them.
 
